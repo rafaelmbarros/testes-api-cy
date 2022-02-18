@@ -1,10 +1,12 @@
 pipeline {
     agent any
 
+    tools {nodejs "nodejs"}
+
     stages {
         stage('Clonar o repositorio') {
             steps {
-                gir branch: 'main', url: 'https://github.com/rafaelmbarros/testes-api-cy.git'
+                git branch: 'main', url: 'https://github.com/rafaelmbarros/testes-api-cy.git'
             }
         }
         stage('Instalar dependencias') {
